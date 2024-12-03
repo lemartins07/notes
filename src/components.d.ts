@@ -8,10 +8,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppHome {
     }
-    interface AppProfile {
-        "name": string;
-    }
     interface AppRoot {
+    }
+    interface FskNotesList {
     }
 }
 declare global {
@@ -21,36 +20,35 @@ declare global {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
     };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
-    }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
-    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLFskNotesListElement extends Components.FskNotesList, HTMLStencilElement {
+    }
+    var HTMLFskNotesListElement: {
+        prototype: HTMLFskNotesListElement;
+        new (): HTMLFskNotesListElement;
+    };
     interface HTMLElementTagNameMap {
         "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "fsk-notes-list": HTMLFskNotesListElement;
     }
 }
 declare namespace LocalJSX {
     interface AppHome {
     }
-    interface AppProfile {
-        "name"?: string;
-    }
     interface AppRoot {
+    }
+    interface FskNotesList {
     }
     interface IntrinsicElements {
         "app-home": AppHome;
-        "app-profile": AppProfile;
         "app-root": AppRoot;
+        "fsk-notes-list": FskNotesList;
     }
 }
 export { LocalJSX as JSX };
@@ -58,8 +56,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "fsk-notes-list": LocalJSX.FskNotesList & JSXBase.HTMLAttributes<HTMLFskNotesListElement>;
         }
     }
 }

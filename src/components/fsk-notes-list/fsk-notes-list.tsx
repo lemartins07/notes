@@ -9,7 +9,7 @@ export class FskNotesList {
   render() {
     return (
       <Host>
-        <slot></slot>
+        <slot>Create note</slot>
       </Host>
     );
   }

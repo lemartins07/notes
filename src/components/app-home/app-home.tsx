@@ -10,6 +10,7 @@ export class AppHome {
   render() {
     return (
       <div class="app-home">
+        <fsk-notes-list></fsk-notes-list>
       </div>
     );
   }
