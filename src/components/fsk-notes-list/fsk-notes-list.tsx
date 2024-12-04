@@ -1,5 +1,9 @@
 import { Component, Host, h } from '@stencil/core';
 import { getList } from '../../library/NotesData';
+import dayjs from 'dayjs';
+import 'dayjs/locale/en'
+
+dayjs.locale('en');
 
 @Component({
   tag: 'fsk-notes-list',
@@ -26,7 +30,7 @@ export class FskNotesList {
               {notes.map((note: any) => (
                 <tr key={note.id}>
                   <td>{note.id}</td>
-                  <td>{note.datetime}</td>
+                  <td>{dayjs(note.datetime).format('MMMM D, YYYY h:mm A')}</td>
                   <td>{note.title}</td>
                 </tr>
               ))}
