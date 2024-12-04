@@ -17,7 +17,6 @@ export class FskNotesList {
     return (
       <Host>
         <div>
-          <div>Note List</div>
           <table>
             <thead>
               <tr>
@@ -27,7 +26,7 @@ export class FskNotesList {
               </tr>
             </thead>
             <tbody>
-              {notes.map((note: any) => (
+              {notes.reverse().map((note: any) => (
                 <tr key={note.id}>
                   <td>{note.id}</td>
                   <td>{dayjs(note.datetime).format('MMMM D, YYYY h:mm A')}</td>
