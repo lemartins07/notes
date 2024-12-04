@@ -8,6 +8,8 @@ import { getList } from '../../library/NotesData';
 })
 export class FskNotesList {
   render() {
+    console.log(getList())
+    const notes = getList();
     return (
       <Host>
         <div>
@@ -15,9 +17,20 @@ export class FskNotesList {
           <table>
             <thead>
               <tr>
-                <th>{getList()}</th>
+                <th>#</th>
+                <th>Date/Time</th>
+                <th>Title</th>
               </tr>
             </thead>
+            <tbody>
+              {notes.map((note: any) => (
+                <tr key={note.id}>
+                  <td>{note.id}</td>
+                  <td>{note.datetime}</td>
+                  <td>{note.title}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       </Host>
